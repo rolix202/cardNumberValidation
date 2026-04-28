@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { cardFuncValidator } from '../utils/cardFuncValidator';
+import { cardFuncValidator } from '../services/cardFuncValidator';
 import AppError from '../errors/AppError';
 
 export const postCardController = (req: Request, res: Response, next: NextFunction) => {
