@@ -8,12 +8,13 @@ export const postCardController = (req: Request, res: Response, next: NextFuncti
     const isValid = cardFuncValidator(cardNumber); 
 
     if (!isValid){
-        next(new AppError('Card validation failed', 400));
+        next(new AppError('Invalid card details', 400));
         return;
     }
 
     res.status(200).json({
-        isValid: true,
-        message: "Card successfully validated"
+        valid: true,
+        message: "Card successfully validated",
+        cardNumber
     })
 }

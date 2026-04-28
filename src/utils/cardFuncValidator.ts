@@ -11,7 +11,7 @@ export const cardFuncValidator = (cardNumber: string): boolean => {
 
         return acc + digit;
 
-    })
-    
+    }, 0)
+
     return sum % 10 === 0;
 }
