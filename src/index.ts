@@ -1,16 +1,20 @@
-import express, {Request, Response} from 'express';
+import app from "./app";
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
-
-app.get('/', (req: Request, res: Response) => {
-    res.status(200).json({ message: 'Welcome to the Card Number Validation API!' });
+const server = app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Server is running on port ' + (process.env.PORT || 3000));
-});
+process.on('unhandledRejection', (err: Error) => {
+    console.error('UNHANDLED RECJECTION:', err.message);
+    server.close(() => process.exit(1));
+})
+
+process.on('uncaughtException', (err: Error) => {
+    console.error('UNCAUGHT EXCEPTION:', err.message);
+    server.close(() => process.exit(1));
+})
