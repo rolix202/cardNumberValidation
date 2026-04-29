@@ -15,6 +15,5 @@ export const postCardController = (req: Request, res: Response, next: NextFuncti
     res.status(200).json({
         valid: true,
         message: "Card successfully validated",
-        cardNumber
     })
 }
