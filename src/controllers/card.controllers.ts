@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { cardFuncValidator } from '../utils/cardFuncValidator';
+import { cardFuncValidator } from '../services/cardFuncValidator';
 import AppError from '../errors/AppError';
 
 export const postCardController = (req: Request, res: Response, next: NextFunction) => {
@@ -15,6 +15,5 @@ export const postCardController = (req: Request, res: Response, next: NextFuncti
     res.status(200).json({
         valid: true,
         message: "Card successfully validated",
-        cardNumber
     })
 }

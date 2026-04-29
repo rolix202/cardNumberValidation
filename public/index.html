@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Number Validator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Card Number Validator</h1>
+            <p>Enter your credit card</p>
+        </header>
+
+
+
+        <main>
+            <div id="result" class="result" style="display: none;">
+                <div class="result-text">
+                    <p id="resultMessage"></p>
+                </div>
+            </div>
+
+            <form id="cardForm" class="card-form">
+                <div class="input-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input
+                        type="text"
+                        id="cardNumber"
+                        name="cardNumber"
+                        placeholder="Enter card number"
+                        maxlength="25"
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="validateBtn" class="validate-btn">
+                    <span class="btn-text">Validate Card</span>
+                    <span class="btn-loading" style="display: none;">Validating...</span>
+                </button>
+            </form>
+
+            
+        </main>
+
+        <footer>
+            <p style="font-style: italic;">by <a href="https://oodoroland.com" target="_blank">oodoroland.com</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
